@@ -42,7 +42,7 @@ app.post('/', [check('email').isEmail(), check('name').isLength({min: 3})], func
     res.send(200);
   }
 })
-app.listen(server.port, function(){
+app.listen(process.env.PORT || server.port, function(){
   console.log("Application: "+ server.name);
   console.log("Port: "+ server.port);
 })
