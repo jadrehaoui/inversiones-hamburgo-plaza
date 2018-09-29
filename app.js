@@ -39,10 +39,10 @@ app.post('/', [check('email').isEmail(), check('name').isLength({min: 3})], func
         console.log("res", response);
       }
     })
-    res.send(200);
+    res.render('index');
   }
 })
-app.listen(server.port, function(){
+app.listen(process.env.PORT || server.port, function(){
   console.log("Application: "+ server.name);
   console.log("Port: "+ server.port);
 })
